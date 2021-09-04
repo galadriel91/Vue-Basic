@@ -21,6 +21,27 @@ module.exports = {
             {
                 test:/\.vue$/,
                 loader:'vue-loader'
+            },
+            {
+                test:/\.css$/,
+                use:['style-loader' , 'css-loader']
+            },
+            {
+                test:/\.scss$/,
+                use:['style-loader' , 'css-loader' , 'sass-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                          name: '[name].[contenthash].[ext]',
+                          outputPath: 'static/img',
+                          esModule: false
+                        }
+                    }
+                ],
             }
         ]
     },
