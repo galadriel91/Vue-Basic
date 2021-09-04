@@ -1,7 +1,7 @@
 <template>
     <div>
-        뷰 웹팩
-        <p>ㅎㅎ</p>
+        <h1>Vue Webpack Setting</h1>
+        <img :src="require('Img/webpack.png')" alt="">
     </div>
 </template>
 
@@ -11,6 +11,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+    @import 'Style/partials/VueWebpack';
 </style>

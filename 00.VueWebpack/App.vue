@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <VueWebpack/>
     </div>
 </template>
@@ -13,6 +13,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    @import 'Style/index';
 </style>
