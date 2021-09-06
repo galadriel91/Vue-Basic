@@ -1,0 +1,19 @@
+form{
+    width: 25rem; display: inline-block; border: 2px solid #000; border-radius: .5rem;
+    height: 3.5rem;font-size: 0;
+    input{
+        width: 85%; border-radius: .5rem 0 0 .5rem;
+        line-height: 3.5rem; text-indent: 1.5rem; font-size: 1.6rem; color: #000;
+        &:focus{
+            outline: none;
+        }
+        &::placeholder{
+            color: #000;
+        }
+    }
+    button{
+        background: #fff; width: 15%; border-radius: 0 .5rem .5rem 0;
+        font-size: 2.5rem; color: #000; line-height: 3.5rem;
+        cursor: pointer;
+    }
+}

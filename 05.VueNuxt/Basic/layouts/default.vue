@@ -1,12 +1,15 @@
 <template>
     <div>
-        헤더
+        <RouterNav/>
         <Nuxt/>
     </div>
 </template>
 
 <script>
+import RouterNav from '~/components/RouterNav.vue'
+
 export default {
+  components: { RouterNav },
 
 }
 </script>
