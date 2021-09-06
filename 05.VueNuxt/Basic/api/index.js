@@ -20,8 +20,13 @@ const fetchSearchItem = (value) => {
     })
 }
 
+const fetchCartItem = () => {
+    return instance.get('/carts')
+}
+
 export{
     fetchProductsItem,
     fetchDetailItem,
-    fetchSearchItem
+    fetchSearchItem,
+    fetchCartItem
 }
