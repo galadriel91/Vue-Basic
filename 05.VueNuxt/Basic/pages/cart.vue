@@ -15,9 +15,6 @@
 
 <script>
 export default {
-    async asyncData({store}){
-        store.dispatch('ADD_CART')
-    },
     computed:{
         CARTITEM(){
             return this.$store.state.cartItem

@@ -11,13 +11,13 @@ export const mutations = {
 }
 
 export const actions = {
-    async ADD_CART({commit}){
+    async nuxtServerInit(storeContext , nuxtContext){
         const response = await fetchCartItem()
         const cartItem = response.data.map((item)=>({
             ...item,
             imageUrl:`${item.imageUrl}?random=${Math.random()}`
         }))
-        console.log(cartItem)
-        commit('ADD_CART_ITEM' , cartItem)
+        storeContext.commit('ADD_CART_ITEM' , cartItem)
+
     }
 }
