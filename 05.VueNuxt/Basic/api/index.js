@@ -20,6 +20,10 @@ const fetchSearchItem = (value) => {
     })
 }
 
+const addCartItem = (item) => {
+    return instance.post('/carts' , item)
+}
+
 const fetchCartItem = () => {
     return instance.get('/carts')
 }
@@ -28,5 +32,6 @@ export{
     fetchProductsItem,
     fetchDetailItem,
     fetchSearchItem,
-    fetchCartItem
+    fetchCartItem,
+    addCartItem
 }
