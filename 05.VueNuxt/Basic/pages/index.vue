@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="searchWrap">
-      <SearchInput/>
+      <SearchInput @input="onChangeInput" @submit="onSubmitForm"/>
     </div>
     <h1>상품 페이지</h1>
     <ul class="itemWrap">
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { fetchProductsItem } from '@/api/index'
+import { fetchProductsItem , fetchSearchItem } from '@/api/index'
 import SearchInput from '~/components/SearchInput.vue'
 
 export default {
@@ -32,9 +32,26 @@ export default {
     return { products } 
   },
 
+  data(){
+    return{
+      value:''
+    }
+  },
+
   methods:{
     onClickDetailItem(id){
       this.$router.push(`/detail/${id}`)
+    },
+    onChangeInput(value){
+      this.value = value
+    },
+    async onSubmitForm(){
+      const response = await fetchSearchItem(this.value)
+      const searchItem = response.data.map((item)=>({
+        ...item,
+        imageUrl:`${item.imageUrl}?random=${Math.random()}`
+      }))
+      this.products = searchItem
     }
   }
 

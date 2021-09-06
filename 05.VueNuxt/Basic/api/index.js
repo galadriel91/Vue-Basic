@@ -12,7 +12,16 @@ const fetchDetailItem = (id) => {
     return instance.get(`/products/${id}`)
 }
 
+const fetchSearchItem = (value) => {
+    return instance.get('/products' , {
+        params:{
+            name_like:value
+        }
+    })
+}
+
 export{
     fetchProductsItem,
-    fetchDetailItem
+    fetchDetailItem,
+    fetchSearchItem
 }
