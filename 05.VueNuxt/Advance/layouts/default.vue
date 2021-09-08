@@ -1,9 +1,14 @@
 <template>
-    <div>디폴트</div>
+    <div>
+        <RouterNav/>
+        <Nuxt/>
+    </div>
 </template>
 
 <script>
+import RouterNav from '~/components/RouterNav.vue'
 export default {
+  components: { RouterNav },
 
 }
 </script>
