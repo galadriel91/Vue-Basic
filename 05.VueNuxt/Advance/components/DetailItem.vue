@@ -6,13 +6,13 @@
         <div>
             <p>{{detailItem.name}}</p>
             <span>{{detailItem.price}}$</span>
-            <button class="xi-cart"></button>
+            <button class="xi-cart" @click="onAddCart"></button>
         </div>
     </div>
 </template>
 
 <script>
-import { fetchDetailItem } from '~/api'
+import { addCartItem, fetchDetailItem } from '~/api'
 export default {
     async fetch(){
         const id = this.$route.params.id
@@ -23,6 +23,12 @@ export default {
     data(){
         return{
             detailItem : ''
+        }
+    },
+    methods:{
+        onAddCart(){
+            this.$router.push('/cart')
+            addCartItem(this.detailItem)
         }
     }
 }

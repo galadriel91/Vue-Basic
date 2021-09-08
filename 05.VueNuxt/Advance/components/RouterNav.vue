@@ -3,7 +3,7 @@
         <div class="headerWrap">
             <h1><NuxtLink to="/">Nuxt Advance</NuxtLink></h1>
             <div>
-                <button class="xi-cart"></button>
+                <button class="xi-cart" @click="onClickCart"></button>
             </div>
         </div>
     </header>
@@ -11,7 +11,11 @@
 
 <script>
 export default {
-
+    methods:{
+        onClickCart(){
+            this.$router.push('/cart')
+        }
+    }
 }
 </script>
 

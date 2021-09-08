@@ -12,8 +12,17 @@ const fetchDetailItem = (id) => {
     return instance.get(`/products/${id}`)
 }
 
+const addCartItem = (item) => {
+    return instance.post('/carts' , item)
+}
+
+const fetchCartItem = () => {
+    return instance.get('/carts')
+}
 
 export{ 
     fetchProductsItem,
-    fetchDetailItem
+    fetchDetailItem,
+    addCartItem,
+    fetchCartItem
 }
