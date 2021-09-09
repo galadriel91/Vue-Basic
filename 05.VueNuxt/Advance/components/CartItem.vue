@@ -1,13 +1,18 @@
 <template>
-    <ul>
-        <li v-for="item in CARTITEM" :key="item.id">
-            <img :src="item.imageUrl" :alt="item.name">
-            <div>
-                <p>{{item.name}}</p>
-                <span>{{item.price}}$</span>
-            </div>
-        </li>
-    </ul>
+    <div>
+        <ul>
+            <li v-for="item in CARTITEM" :key="item.id">
+                <img :src="item.imageUrl" :alt="item.name">
+                <div>
+                    <h4>{{item.name}}</h4>
+                    <p>{{item.price}}$</p>
+                    <span>1개</span>
+                    <button class="xi-cart-remove"></button>
+                </div>
+            </li>
+        </ul>
+        <p class="totalPrice">Total Price  $</p>
+    </div>
 </template>
 
 <script>
