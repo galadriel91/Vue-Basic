@@ -12,6 +12,14 @@ const fetchDetailItem = (id) => {
     return instance.get(`/products/${id}`)
 }
 
+const fetchSearchItem = (keyword) => {
+    return instance.get('/products' , {
+        params:{
+            name_like:keyword
+        }
+    })
+}
+
 const addCartItem = (item) => {
     return instance.post('/carts' , item)
 }
@@ -23,6 +31,7 @@ const fetchCartItem = () => {
 export{ 
     fetchProductsItem,
     fetchDetailItem,
+    fetchSearchItem,
     addCartItem,
     fetchCartItem
 }

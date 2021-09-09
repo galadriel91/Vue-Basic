@@ -10,9 +10,12 @@ header{
                 font-size: 2.5rem; font-weight: bold; color: #fff;
             }
         }
-        button{
-            font-size: 2.5rem; color: #fff; background: none;
-            cursor: pointer; 
+        div{
+            display: flex; align-items: center;
+            button{
+                font-size: 2.5rem; color: #fff; background: none;
+                cursor: pointer; 
+            }
         }
     }
 }

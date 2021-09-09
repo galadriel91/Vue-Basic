@@ -4,13 +4,18 @@
             <h1><NuxtLink to="/">Nuxt Advance</NuxtLink></h1>
             <div>
                 <button class="xi-cart" @click="onClickCart"></button>
+                <div>
+                    <SearchInput/>
+                </div>
             </div>
         </div>
     </header>
 </template>
 
 <script>
+import SearchInput from './SearchInput.vue'
 export default {
+  components: { SearchInput },
     methods:{
         onClickCart(){
             this.$router.push('/cart')

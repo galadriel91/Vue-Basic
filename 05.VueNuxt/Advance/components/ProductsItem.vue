@@ -1,7 +1,7 @@
 <template>
     <ul class="itemWrap">
         <li v-for="item in products" :key="item.id" @click="onClickDetailItem(item.id)">
-            <em><img :src="item.imageUrl" :alt="item.name"></em>
+            <em><img :src="item.imageUrl" :alt="item.name" v-lazy-load></em>
             <div>
                 <p>{{item.name}}</p>
                 <span>{{item.price}}$</span>
@@ -11,19 +11,11 @@
 </template>
 
 <script>
-import { fetchProductsItem } from '@/api'
 export default {
-    async fetch(){
-        const {data} = await fetchProductsItem();
-        const items = data.map((item)=>({
-            ...item,
-            imageUrl:`${item.imageUrl}?random=${Math.random()}`
-        }))
-        this.products = items
-    },
-    data(){
-        return{
-            products : ''
+    props:{
+        products:{
+            type:Array,
+            required:true
         }
     },
     methods:{
