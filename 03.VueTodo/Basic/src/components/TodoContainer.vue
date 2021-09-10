@@ -7,6 +7,9 @@
 <script>
 import TodoItem from 'Components/TodoItem'
 export default {
+    created(){
+        this.$store.commit('GET_TODO')
+    },
     components:{
         TodoItem
     },

@@ -1,6 +1,17 @@
 <template>
     <li>
-        {{item.title}}
+        <div class="itemWrap">
+            <div class="checkWrap">
+                <button class="xi-checkbox-blank"></button>
+                <!-- <button class="xi-check-square-o"></button> -->
+            </div>
+            <div class="titleWrap">
+                <h4>{{item.title}}</h4>
+            </div>
+            <div class="buttonWrap">
+                <button class="xi-minus-square-o"></button>
+            </div>
+        </div>
     </li>
 </template>
 

@@ -11,6 +11,12 @@ export const store = new Vuex.Store({
     mutations:{
         ADD_TODO(state , payload){
             state.todoList.push(payload)
+            localStorage.setItem('list' , JSON.stringify(state.todoList))
+        },
+        GET_TODO(state){
+            if(localStorage.list){
+                state.todoList = JSON.parse(localStorage.list)
+            }
         }
     },
     actions:{

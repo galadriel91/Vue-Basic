@@ -16,7 +16,8 @@ export default {
         onSubmitForm(){
             this.$store.commit('ADD_TODO' , {
                 id:Date.now(),
-                title:this.value
+                title:this.value,
+                isCheck:false,
             })
             this.value = ''
         }
