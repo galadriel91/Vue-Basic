@@ -5,10 +5,13 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state:{
-        test:'Vuex'
+        test:'Vuex',
+        todoList:[]
     },
     mutations:{
-
+        ADD_TODO(state , payload){
+            state.todoList.push(payload)
+        }
     },
     actions:{
 
