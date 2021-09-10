@@ -9,7 +9,7 @@
                 <h4>{{item.title}}</h4>
             </div>
             <div class="buttonWrap">
-                <button class="xi-minus-square-o"></button>
+                <button class="xi-minus-square-o" @click="onClickRemove"></button>
             </div>
         </div>
     </li>
@@ -21,6 +21,11 @@ export default {
         item:{
             type:Object,
             required:true
+        }
+    },
+    methods:{
+        onClickRemove(){
+            this.$store.commit('REMOVE_TODO' , this.item.id)
         }
     }
 }

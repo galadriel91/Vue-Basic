@@ -17,6 +17,11 @@ export const store = new Vuex.Store({
             if(localStorage.list){
                 state.todoList = JSON.parse(localStorage.list)
             }
+        },
+        REMOVE_TODO(state , payload){
+            const index = state.todoList.findIndex(v=>v.id === payload)
+            state.todoList.splice(index , 1)
+            localStorage.setItem('list' , JSON.stringify(state.todoList))
         }
     },
     actions:{
