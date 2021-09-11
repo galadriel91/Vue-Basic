@@ -1,4 +1,4 @@
-import { fetchSearchItem } from "~/api"
+import { fetchCartItem, fetchSearchItem, removeCartItem } from "~/api"
 
 export const state = () => ({
     cartItem : [],
@@ -31,4 +31,14 @@ export const actions = {
         }))
         commit('SET_SEARCH_ITEM' , item)
     },
+
+    async REMOVE_CART({commit} , payload){
+        await removeCartItem(payload)
+        const { data } = await fetchCartItem()
+        const cartItem = data.map((item)=>({
+            ...item,
+            imageUrl:`${item.imageUrl}?random=${Math.random()}`
+        }))
+        commit('SET_CART' , cartItem)
+    }
 }

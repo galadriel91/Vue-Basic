@@ -28,10 +28,16 @@ const fetchCartItem = () => {
     return instance.get('/carts')
 }
 
+const removeCartItem = (id) => {
+    return instance.delete(`/carts/${id}`)
+}
+
+
 export{ 
     fetchProductsItem,
     fetchDetailItem,
     fetchSearchItem,
     addCartItem,
-    fetchCartItem
+    fetchCartItem,
+    removeCartItem
 }

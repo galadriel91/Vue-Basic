@@ -7,7 +7,7 @@
                     <h4>{{item.name}}</h4>
                     <p>{{item.price}}$</p>
                     <span>1개</span>
-                    <button class="xi-cart-remove"></button>
+                    <button class="xi-cart-remove" @click="onClickRemoveCart(item.id)"></button>
                 </div>
             </li>
         </ul>
@@ -31,7 +31,14 @@ export default {
         CARTITEM(){
             return this.$store.state.cartItem
         }
+    },
+
+    methods:{
+        onClickRemoveCart(id){
+            this.$store.dispatch('REMOVE_CART' , id)
+        }
     }
+    
 }
 </script>
 
