@@ -12,12 +12,22 @@ html{
 }
 
 body{
-    overflow-x: hidden;
+    overflow-x: hidden; box-sizing: border-box;
     font-family: 'Arita-dotum-Medium'; font-size: 1rem;
     background: #f3ede7;
 }
 
+input{
+    font-family: 'Arita-dotum-Medium';
+}
+
 .container{
     display: flex; justify-content: center; align-items: center; flex-direction: column;
-    height: calc(100vh - 6rem);
+    height: 100vh
+}
+
+@media screen and (max-width:1000px) {
+    body{
+        padding: 0 1rem;
+    }
 }

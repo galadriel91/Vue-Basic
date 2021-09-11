@@ -1,0 +1,31 @@
+form{
+    display: flex; align-items: center;
+    width: 100rem; height: 5rem; 
+    input{
+        width: 95%; height: 100%; background: #1C6B47;
+        font-size: 1.6rem;  color: #fff; text-indent: 2rem;
+        &:focus{
+            outline: none;
+        }
+        &::placeholder{
+            color: #fff;
+        }
+    }
+    button{
+        width: 5%; background: #143828; 
+        line-height: 5rem; font-size: 2rem; color: #fff; font-weight: bold; 
+    }
+}
+
+@media screen and (max-width:1000px) {
+    form{
+        width: 100%;
+        input{
+            width: calc(100% - 5rem);
+        }
+        button{
+            width: 5rem;
+        }
+    }
+}
+

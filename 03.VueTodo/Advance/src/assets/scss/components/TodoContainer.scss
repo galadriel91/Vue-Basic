@@ -1,0 +1,10 @@
+ul{
+    width: 100rem; height: 50rem; background: #fff;
+    border-radius: 0 0 1rem 1rem;
+}
+
+@media screen and (max-width:1000px) {
+    ul{
+        width: 100%;
+    }   
+}
