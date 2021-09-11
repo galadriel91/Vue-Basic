@@ -40,7 +40,9 @@ export default {
         },
         onClickCheck(){
             this.$store.commit('CHECK_TODO' , this.item.id)
+            this.isUpdate = false
         },
+
         onClickUpdate(){
             this.isUpdate = !this.isUpdate;
             setTimeout(()=>{
