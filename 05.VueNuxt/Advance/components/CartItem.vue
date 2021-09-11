@@ -11,7 +11,7 @@
                 </div>
             </li>
         </ul>
-        <p class="totalPrice">Total Price  $</p>
+        <p class="totalPrice">Total Price <strong>{{TOTALPRICE}}</strong>$</p>
     </div>
 </template>
 
@@ -30,6 +30,13 @@ export default {
     computed:{
         CARTITEM(){
             return this.$store.state.cartItem
+        },
+        TOTALPRICE(){
+            const price = []
+            for(let i = 0 ; i < this.CARTITEM.length ; i++){
+                price.push(this.CARTITEM[i].price)
+            }
+            return price.reduce((a,b)=> (parseInt(a) + parseInt(b)) , 0)
         }
     },
 
