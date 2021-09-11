@@ -3,6 +3,15 @@ li{
     button{
         background: none; cursor: pointer; transition: all .5s;
     }
+    &:hover{
+        .itemWrap{
+            .titleWrap{
+                button{
+                    opacity: 1;
+                }
+            }
+        }
+    }
     .itemWrap{
         height: 100%; display: flex; align-items: center;
         .checkWrap{
@@ -10,11 +19,39 @@ li{
             button.xi-checkbox-blank{
                 font-size: 2.5rem; color: #000; line-height: 6rem;
             }
+            button.xi-check-square-o{
+                font-size: 2.5rem; color: #42b883; line-height: 6rem;
+            }
         }
         .titleWrap{
-            width: 90%;
+            width: 90%; height: 100%; display: flex; align-items: center;
             h4{
                 font-size: 1.8rem; color: #222;
+                &.complete{
+                    color: #999; text-decoration: line-through;
+                }
+                &.complete + .updateBtn{
+                    display: none;
+                }
+            }
+            form{
+                vertical-align: bottom;
+                input{
+                    font-size: 1.8rem; color: #222; font-weight: bold; ;
+                    &::placeholder{
+                        color: #222;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                button{
+                    font-size: 1.6rem;
+                }
+            }
+            .updateBtn{
+                font-size: 1.2rem; margin-left: 3rem; line-height: 6rem;
+                opacity: 0;
             }
         }
         .buttonWrap{

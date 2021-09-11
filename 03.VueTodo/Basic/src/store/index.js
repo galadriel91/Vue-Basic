@@ -22,9 +22,16 @@ export const store = new Vuex.Store({
             const index = state.todoList.findIndex(v=>v.id === payload)
             state.todoList.splice(index , 1)
             localStorage.setItem('list' , JSON.stringify(state.todoList))
+        },
+        CHECK_TODO(state , payload){
+            const index = state.todoList.findIndex(v=>v.id === payload)
+            state.todoList[index].isCheck = !state.todoList[index].isCheck
+            localStorage.setItem('list' , JSON.stringify(state.todoList))
+        },
+        UPDATE_TODO(state , payload){
+            const index = state.todoList.findIndex(v=>v.id === payload.id)
+            state.todoList[index].title = payload.title
+            localStorage.setItem('list' , JSON.stringify(state.todoList))
         }
     },
-    actions:{
-
-    }
 })
