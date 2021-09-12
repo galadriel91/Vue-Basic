@@ -3,10 +3,10 @@
         <div class="headerWrap">
             <h1><NuxtLink to="/">Nuxt Advance</NuxtLink></h1>
             <div>
-                <button class="xi-cart" @click="onClickCart"></button>
                 <div>
                     <SearchInput/>
                 </div>
+                <button class="xi-cart" @click="onClickCart"></button>
             </div>
         </div>
     </header>
