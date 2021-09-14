@@ -4,9 +4,9 @@
             <h1><RouterLink to="/">Hacker Basic</RouterLink></h1>
             <nav>
                 <ul>
-                    <li><RouterLink to="/news">News</RouterLink></li>
-                    <li><RouterLink to="/ask">Ask</RouterLink></li>
-                    <li><RouterLink to="/jobs">Jobs</RouterLink></li>
+                    <li><RouterLink to="/news"><span>News</span></RouterLink></li>
+                    <li><RouterLink to="/ask"><span>Ask</span></RouterLink></li>
+                    <li><RouterLink to="/jobs"><span>Jobs</span></RouterLink></li>
                 </ul>
             </nav>
         </div>
