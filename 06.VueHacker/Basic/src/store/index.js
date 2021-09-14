@@ -1,22 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { fetchNewsData } from '../api'
-
+import actions from './actions'
+import mutations from './mutaions'
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state:{
-        news : []
+        news : [],
+        ask: [],
+        jobs: []
     },
-    mutations:{
-        SET_NEWS(state , payload){
-            state.news = payload
-        }        
-    },
-    actions:{
-        async GET_NEWS({commit}){
-            const { data } = await fetchNewsData()
-            commit('SET_NEWS' , data)
-        }
-    }
+    mutations:mutations,
+    actions:actions
 })
