@@ -9,7 +9,8 @@ export const store = new Vuex.Store({
         news : [],
         ask: [],
         jobs: [],
-        user:{}
+        user:{},
+        item:{}
     },
     mutations:mutations,
     actions:actions

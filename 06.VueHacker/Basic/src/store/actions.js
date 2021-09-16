@@ -1,4 +1,4 @@
-import { fetchAskData, fetchJobsData, fetchNewsData, fetchUserData } from '../api'
+import { fetchAskData, fetchJobsData, fetchNewsData, fetchUserData , fetchItemData } from '../api'
 
 export default{
     async GET_NEWS({commit}){
@@ -16,5 +16,10 @@ export default{
     async GET_USER({commit} , payload){
         const { data } = await fetchUserData(payload)
         commit('SET_USER' , data)
+    },
+    async GET_ITEM({commit} , payload){
+        const { data } = await fetchItemData(payload)
+        commit('SET_ITEM' , data)
     }
+
 }

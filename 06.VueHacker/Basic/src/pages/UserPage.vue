@@ -1,22 +1,19 @@
 <template>
     <div class="userContainer">
-        <div class="userWrap">
-            <p class="xi-user-address"></p>
-            <div class="userInfo">
-                <h4>User : {{USER.id}}</h4>
-                <p>Created : {{USER.created}}</p> 
-                <span>Karma : {{USER.karma}}</span>
-            </div>
-        </div>
-        <div class="userDesc" v-if="USER.about">
-            <p>About</p>
-            <div v-html="USER.about"></div>
-        </div>
+        <UserItem :item="USER">
+            <h4 slot="userName">User : {{USER.id}}</h4>
+            <p slot="userTime">created : {{USER.created}}</p>
+            <span slot="userPoints">Karma : {{USER.karma}}</span> 
+        </UserItem>
     </div>
 </template>
 
 <script>
+import UserItem from '@/components/UserItem'
 export default {
+    components:{
+        UserItem,
+    },
     created(){
         this.$store.dispatch('GET_USER' , this.$route.params.id)
     },
@@ -30,5 +27,4 @@ export default {
 
 <style lang="scss" scoped>
     @import '@/assets/scss/pages/UserPage';
-    
 </style>
