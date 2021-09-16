@@ -8,6 +8,17 @@ const fetchNewsData = () => {
     return instance.get('news/1.json')
 }
 
+const fetchAskData = () => {
+    return instance.get('ask/1.json')
+}
+
+const fetchJobssData = () => {
+    return instance.get('jobs/1.json')
+}
+
+
 export{
-    fetchNewsData
+    fetchNewsData,
+    fetchAskData,
+    fetchJobssData
 }

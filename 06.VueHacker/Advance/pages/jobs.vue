@@ -1,10 +1,15 @@
 <template>
-    <div>잡스</div>
+    <div>
+        <ListItem/>
+    </div>
 </template>
 
 <script>
+import ListItem from '@/components/ListItem'
 export default {
-
+    components:{
+        ListItem
+    }
 }
 </script>
 
