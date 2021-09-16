@@ -12,7 +12,8 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet' , type:'text/css' , href:'http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css'}
     ]
   },
 
