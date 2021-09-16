@@ -16,8 +16,13 @@ const fetchJobsData = () => {
     return instance.get('jobs/1.json')
 }
 
+const fetchUserData = (user) => {
+    return instance.get(`user/${user}.json`)
+}
+
 export{
     fetchNewsData,
     fetchAskData,
-    fetchJobsData
+    fetchJobsData,
+    fetchUserData
 }
