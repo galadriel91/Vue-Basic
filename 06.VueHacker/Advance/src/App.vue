@@ -1,12 +1,16 @@
 <template>
   <div>
-    앱
+    <RouterNav/>
+    <RouterView/>
   </div>
 </template>
 
 <script>
+import RouterNav from './components/RouterNav.vue'
 export default {
-
+  components:{
+    RouterNav,
+  }
 }
 </script>
 
