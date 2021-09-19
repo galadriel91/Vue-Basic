@@ -4,16 +4,8 @@ const instance = axios.create({
     baseURL: "https://api.hnpwa.com/v0/"
 })
 
-const fetchNewsData = () => {
-    return instance.get('news/1.json')
-}
-
-const fetchAskData = () => {
-    return instance.get('ask/1.json')
-}
-
-const fetchJobsData = () => {
-    return instance.get('jobs/1.json')
+const fetchListsData = (name) => {
+    return instance.get(`${name}/1.json`)
 }
 
 const fetchUserData = (user) => {
@@ -25,9 +17,7 @@ const fetchItemData = (item) => {
 }
 
 export{
-    fetchNewsData,
-    fetchAskData,
-    fetchJobsData,
+    fetchListsData,
     fetchUserData,
     fetchItemData
 }

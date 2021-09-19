@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import AskPage from '@/pages/AskPage'
-import JobsPage from '@/pages/JobsPage'
-import NewsPage from '@/pages/NewsPage'
+import createListView from '@/pages/createListView'
 import ItemPage from '@/pages/ItemPage'
 import UserPage from '@/pages/UserPage'
 
@@ -17,17 +15,17 @@ export const router = new VueRouter({
         {
             path:'/news',
             name:'news',
-            component:NewsPage
+            component:createListView('NewsPage')
         },
         {
             path:'/ask',
             name:'ask',
-            component:AskPage
+            component:createListView('AskPage')
         },
         {
             path:'/jobs',
             name:'jobs',
-            component:JobsPage
+            component:createListView('JobsPage')
         },
         {
             path:'/item/:id',
