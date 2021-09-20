@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import createListView from '@/pages/createListView'
 import ItemPage from '@/pages/ItemPage'
 import UserPage from '@/pages/UserPage'
+import { store } from '@/store/index'
 
 Vue.use(VueRouter)
 
@@ -15,17 +16,29 @@ export const router = new VueRouter({
         {
             path:'/news',
             name:'news',
-            component:createListView('NewsPage')
+            component:createListView('NewsPage'),
+            beforeEnter: (to , from , next) => {
+                store.dispatch('GET_LISTS' , to.name)
+                next()
+            }
         },
         {
             path:'/ask',
             name:'ask',
-            component:createListView('AskPage')
+            component:createListView('AskPage'),
+            beforeEnter: (to , from , next) => {
+                store.dispatch('GET_LISTS' , to.name)
+                next()
+            }
         },
         {
             path:'/jobs',
             name:'jobs',
-            component:createListView('JobsPage')
+            component:createListView('JobsPage'),
+            beforeEnter: (to , from , next) => {
+                store.dispatch('GET_LISTS' , to.name)
+                next()
+            }
         },
         {
             path:'/item/:id',
