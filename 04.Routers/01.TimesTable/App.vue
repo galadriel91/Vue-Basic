@@ -1,15 +1,18 @@
 <template>
-    <div>
-        뷰
+    <div class="container">
+        <TimesTable/>
     </div>
 </template>
 
 <script>
+import TimesTable from 'Components/TimesTable'
 export default {
-
+    components:{
+        TimesTable
+    }
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    @import 'Style/index';
 </style>

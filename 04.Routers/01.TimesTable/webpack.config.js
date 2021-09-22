@@ -7,7 +7,9 @@ module.exports = {
     resolve:{
         extensions:['.vue' , '.js' , '.scss' , '.css'],
         alias:{
-            Components:path.resolve('./src/components/')
+            Components:path.resolve('./src/components/'),
+            Style:path.resolve('./src/assets/scss/'),
+            Img:path.resolve('./src/assets/image/'),
         }
     },
     entry:{
@@ -18,6 +20,14 @@ module.exports = {
             {
                 test:/\.vue$/,
                 loader:'vue-loader'
+            },
+            {
+                test:/\.scss$/,
+                use:['style-loader' , 'css-loader' , 'sass-loader']
+            },
+            {
+                test:/\.css$/,
+                use:['style-loader' , 'css-loader' ]
             }
         ]
     },
