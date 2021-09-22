@@ -19,7 +19,8 @@ export const router = new VueRouter({
             name:'news',
             component:NewsPage,
             beforeEnter : (to , from , next) => {
-                store.dispatch('SPIN_LOADING')
+                store.dispatch('START_LOADING');
+                store.dispatch('GET_LISTS' , to.name)
                 next()
             }
         },
@@ -28,7 +29,8 @@ export const router = new VueRouter({
             name:'ask',
             component:AskPage,
             beforeEnter : (to , from , next) => {
-                store.dispatch('SPIN_LOADING')
+                store.dispatch('START_LOADING')
+                store.dispatch('GET_LISTS' , to.name)
                 next()
             }
         },
@@ -37,17 +39,28 @@ export const router = new VueRouter({
             name:'jobs',
             component:JobsPage,
             beforeEnter : (to , from , next) => {
-                store.dispatch('SPIN_LOADING')
+                store.dispatch('START_LOADING')
+                store.dispatch('GET_LISTS' , to.name)
                 next()
             }
         },
         {
             path:'/user/:id',
-            component:UserPage
+            component:UserPage,
+            beforeEnter : (to , from , next) => {
+                store.dispatch('START_LOADING')
+                store.dispatch('GET_USER' , to.params.id)
+                next()
+            }
         },
         {
             path:'/item/:id',
-            component:ItemPage
+            component:ItemPage,
+            beforeEnter : (to , from , next) => {
+                store.dispatch('START_LOADING')
+                store.dispatch('GET_ITEM' , to.params.id)
+                next()
+            }
         }
     ]
 })

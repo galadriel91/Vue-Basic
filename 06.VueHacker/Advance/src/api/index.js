@@ -16,6 +16,10 @@ const fetchJobsItem = () => {
     return instance.get('jobs/1.json')
 }
 
+const fetchListItem = (pageName) => {
+    return instance.get(`${pageName}/1.json`)
+}
+
 const fetchUserItem = (user) => {
     return instance.get(`user/${user}.json`)
 }
@@ -28,6 +32,7 @@ export{
     fetchNewsItem,
     fetchAskItem,
     fetchJobsItem,
+    fetchListItem,
     fetchUserItem,
     fetchInfoItem
 }

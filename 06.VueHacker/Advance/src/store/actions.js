@@ -1,19 +1,9 @@
-import { fetchAskItem, fetchInfoItem, fetchJobsItem, fetchNewsItem, fetchUserItem } from '../api'
+import { fetchInfoItem, fetchListItem, fetchUserItem } from '../api'
 
 export default{
-    async GET_NEWS({commit}){
-        const { data } = await fetchNewsItem()
-        commit('SET_NEWS' , data)
-        return data
-    },
-    async GET_ASK({commit}){
-        const { data } = await fetchAskItem()
-        commit('SET_ASK' , data)
-        return data
-    },
-    async GET_JOBS({commit}){
-        const { data } = await fetchJobsItem()
-        commit('SET_JOBS' , data)
+    async GET_LISTS({commit} , payload){
+        const { data } = await fetchListItem(payload)
+        commit('SET_LISTS' , data)
         return data
     },
     async GET_USER({commit} , payload){
@@ -26,8 +16,13 @@ export default{
         commit('SET_ITEM' , data)
         return data
     },
-    SPIN_LOADING({commit}){
-        commit('SET_LOADING')
+    
+    START_LOADING({commit}){
+        commit('START_LOADING')
+    },
+    
+    END_LOADING({commit}){
+        commit('END_LOADING')
     }
 
 }

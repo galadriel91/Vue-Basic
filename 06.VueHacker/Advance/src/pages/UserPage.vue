@@ -19,8 +19,8 @@ export default {
             return this.$store.state.users
         }
     },
-    created(){
-        this.$store.dispatch('GET_USER' , this.$route.params.id)
+    mounted(){
+        this.$store.dispatch('END_LOADING')
     }
 }
         

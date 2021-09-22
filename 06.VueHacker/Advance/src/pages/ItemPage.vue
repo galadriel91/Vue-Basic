@@ -18,13 +18,13 @@ export default{
     components:{
         UserItem
     },
-    created(){
-        this.$store.dispatch('GET_ITEM' , this.$route.params.id)
-    },
     computed:{
         ITEM(){
             return this.$store.state.item
         }
+    },
+    mounted(){
+        this.$store.dispatch('END_LOADING')
     }
 } 
 
