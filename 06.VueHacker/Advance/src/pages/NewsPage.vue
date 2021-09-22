@@ -8,7 +8,9 @@
 import ListItem from '../components/ListItem.vue'
 export default {
   components: { ListItem },
-    
+  mounted(){
+    this.$store.dispatch('SPIN_LOADING')
+  }
 }
 </script>
 

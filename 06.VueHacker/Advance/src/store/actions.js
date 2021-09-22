@@ -25,6 +25,9 @@ export default{
         const { data } = await fetchInfoItem(payload)
         commit('SET_ITEM' , data)
         return data
+    },
+    SPIN_LOADING({commit}){
+        commit('SET_LOADING')
     }
 
 }
