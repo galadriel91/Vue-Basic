@@ -9,14 +9,22 @@
             <h1>{{ITEM.title}}</h1>
             <div v-html="ITEM.content"></div>
         </div>
+        <div class="commentWrap">
+            <h2>Comments</h2>
+            <ul>
+                <CommentItem v-for="item in ITEM.comments" :key="item.id" :item="item"/>
+            </ul>
+        </div>
     </div>
 </template>
 
 <script>
 import UserItem from "../components/UserItem.vue"
+import CommentItem from '@/components/CommentItem'
 export default{
     components:{
-        UserItem
+        UserItem,
+        CommentItem
     },
     computed:{
         ITEM(){
