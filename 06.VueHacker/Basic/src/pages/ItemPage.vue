@@ -16,18 +16,17 @@
 
 <script>
 import UserItem from '@/components/UserItem'
+import Mixin from '@/utils/mixins'
 export default {
     components:{
         UserItem
-    },
-    created(){
-        this.$store.dispatch('GET_ITEM' ,this.$route.params.id)
     },
     computed:{
         ITEM(){
             return this.$store.state.item
         }
-    }
+    },
+    mixins:[Mixin]
 }
 </script>
 

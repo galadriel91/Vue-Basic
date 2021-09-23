@@ -2,7 +2,7 @@
   <div>
     <RouterNav/>
     <RouterView/>
-    <!-- <LoadingSpin :loading="loadingCheck"/> -->
+    <LoadingSpin :loading="loadingCheck"/>
   </div>
 </template>
 
@@ -23,13 +23,13 @@ export default {
       this.loadingCheck = true
       console.log(1)
     },
-    offLoaading(){
+    offLoading(){
       this.loadingCheck = false
     }
   },
   created(){
-    bus.$on('startSpin' , this.onLoading)
-    bus.$on('endSpin' , this.offLoading)
+    bus.$on('startSpin' , this.onLoading);
+    bus.$on('endSpin' , this.offLoading);
   },
 
 
