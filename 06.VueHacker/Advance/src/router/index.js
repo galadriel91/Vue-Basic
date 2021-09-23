@@ -19,9 +19,11 @@ export const router = new VueRouter({
             name:'news',
             component:NewsPage,
             beforeEnter : (to , from , next) => {
-                store.dispatch('START_LOADING');
+                store.dispatch('START_LOADING')
                 store.dispatch('GET_LISTS' , to.name)
-                next()
+                .then(()=>{
+                    next()
+                })
             }
         },
         {
@@ -31,7 +33,9 @@ export const router = new VueRouter({
             beforeEnter : (to , from , next) => {
                 store.dispatch('START_LOADING')
                 store.dispatch('GET_LISTS' , to.name)
-                next()
+                .then(()=>{
+                    next()
+                })
             }
         },
         {
@@ -41,7 +45,9 @@ export const router = new VueRouter({
             beforeEnter : (to , from , next) => {
                 store.dispatch('START_LOADING')
                 store.dispatch('GET_LISTS' , to.name)
-                next()
+                .then(()=>{
+                    next()
+                })
             }
         },
         {
@@ -50,7 +56,9 @@ export const router = new VueRouter({
             beforeEnter : (to , from , next) => {
                 store.dispatch('START_LOADING')
                 store.dispatch('GET_USER' , to.params.id)
-                next()
+                .then(()=>{
+                    next()
+                })
             }
         },
         {
@@ -59,7 +67,9 @@ export const router = new VueRouter({
             beforeEnter : (to , from , next) => {
                 store.dispatch('START_LOADING')
                 store.dispatch('GET_ITEM' , to.params.id)
-                next()
+                .then(()=>{
+                    next()
+                })
             }
         }
     ]

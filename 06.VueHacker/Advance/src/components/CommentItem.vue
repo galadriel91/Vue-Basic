@@ -8,9 +8,6 @@
             </div>
         </div>
         <p v-html="item.content" class="content"></p>
-        <ul>
-            
-        </ul>
     </li>
 </template>
 
