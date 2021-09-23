@@ -1,15 +1,19 @@
 <template>
     <div class="container">
-        뷰
+        <WordRelay/>
     </div>
 </template>
 
 <script>
+import WordRelay from 'Components/WordRelay'
 export default {
+    components:{
+        WordRelay
+    }
 
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    @import 'Style/index';
 </style>
