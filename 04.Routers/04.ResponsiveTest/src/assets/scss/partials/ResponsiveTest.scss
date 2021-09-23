@@ -1,0 +1,29 @@
+#screen{
+    border-radius: 1rem;
+    width: 30rem; height: 30rem;  cursor: pointer;
+    h2{
+        padding: 2rem 0;
+        font-size: 1.6rem; font-weight: bold; color: #fff;
+        text-align: center;
+    }
+    &.waiting{
+        background: #0a81ab;
+    }
+    &.ready{
+        background: #ce1212;
+    }
+    &.now{
+        background: #42b883;
+    }
+}
+div{
+    text-align: center;
+    p{
+        margin: 1rem 0;
+        text-align: center; font-size: 1.6rem; color: #000;
+    }
+    button{
+        font-size: 2.5rem; font-weight: bold; background: none; color: #000;
+        cursor: pointer;
+    }
+}

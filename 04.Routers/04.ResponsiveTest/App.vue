@@ -1,12 +1,15 @@
 <template>
-    <div>
-        뷰
+    <div class="container">
+        <ResponsiveTest/>
     </div>
 </template>
 
 <script>
-export default {
-
+import ResponsiveTest from 'Components/ResponsiveTest'
+export default {    
+    components:{
+        ResponsiveTest
+    }
 }
 </script>
 
