@@ -10,6 +10,8 @@
 
 <script>
 import UserItem from '../components/UserItem.vue'
+import Mixins from '@/mixins/index'
+
 export default {
     components:{
         UserItem
@@ -19,9 +21,7 @@ export default {
             return this.$store.state.users
         }
     },
-    mounted(){
-        this.$store.dispatch('END_LOADING')
-    }
+    mixins:[Mixins]
 }
         
 </script>

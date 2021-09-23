@@ -6,11 +6,10 @@
 
 <script>
 import ListItem from '../components/ListItem.vue'
+import Mixins from '@/mixins/index'
 export default {
   components: { ListItem },
-  mounted(){
-    this.$store.dispatch('END_LOADING')
-  }
+  mixins:[Mixins]
 }
 </script>
 
