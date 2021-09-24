@@ -1,0 +1,24 @@
+button{
+    cursor: pointer; background: none;
+}
+.startWrap{
+    text-align: center;
+    h2{
+        margin-bottom: 1.5rem;
+        color: #000; font-size: 2rem;
+    }
+    button{
+        font-size: 4.5rem; color: #000;     
+    }
+}
+.bonusWrap{
+    margin-top: 2rem; text-align: center;
+    h3{
+        margin-bottom: 1rem;
+        font-size: 2rem; color: #000;
+    }
+    button{
+        display: block; margin: 1rem auto;
+        font-size: 3.5rem; color: #000;     
+    }
+}
