@@ -1,0 +1,44 @@
+.screen{
+    width: 300px; height: 300px;
+    border-radius: 1rem;
+}
+.buttonWrap{
+    margin-top: 2rem;
+    text-align: center;
+    button{
+        width: 6rem; margin: 0 .5rem;
+        border-radius: .5rem; color: #fff; font-weight: bold; font-size: 1.5rem; line-height: 3rem; 
+        cursor: pointer; 
+        &:nth-child(1){
+            background: #19aba0;
+        }
+        &:nth-child(2){
+            background: #e2122c;
+        }
+        &:nth-child(3){
+            background: #b3cc33;
+        }
+    }
+}
+.infoWrap{
+    margin: 2rem 0 0;
+    text-align: center;
+    .pickWrap{
+        p{
+            display: inline-block; margin: 0 1rem;
+            font-size: 1.6rem; color: #000;
+        }
+    }
+    .resultWrap{
+        margin-top: 1rem;
+        font-size: 1.6rem; color: #000;
+        p{
+            margin: 1rem 0; font-weight: bold;
+        }
+        button{
+            display: block; margin: 1.5rem auto 0;
+            background: none; cursor: pointer;
+            font-size: 3rem; font-weight: bold; color: #000;
+        }
+    }
+}
