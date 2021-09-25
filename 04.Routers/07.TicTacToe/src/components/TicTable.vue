@@ -1,6 +1,6 @@
 <template>
     <table>
-        <TicTr/>
+        <TicTr v-for="(rowItem , rowIndex) in GAMETABLE" :key="rowIndex" :rowItem="rowItem" :rowIndex="rowIndex"/>
     </table>
 </template>
 
@@ -9,10 +9,15 @@ import TicTr from 'Components/TicTr'
 export default {
     components:{
         TicTr
+    },
+    computed:{
+        GAMETABLE(){
+            return this.$store.state.gameTable
+        }
     }
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+    @import 'Style/partials/TicTable';
 </style>
