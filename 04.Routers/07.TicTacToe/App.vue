@@ -1,12 +1,17 @@
 <template>
-    <div>
-        뷰
+    <div class="container">
+        <TicTacToe/>
     </div>
 </template>
 
 <script>
+import { store } from 'Store/index';
+import TicTacToe from 'Components/TicTacToe'
 export default {
-
+    components:{
+        TicTacToe
+    },
+    store,
 }
 </script>
 
